@@ -95,6 +95,11 @@ export class WordStackingComponent implements OnInit {
     if (savedScore) {
       this.highScore = parseInt(savedScore, 10);
     }
+    const savedVolume = localStorage.getItem('musicVolume');
+    if (savedVolume) {
+      this.musicVolume = parseFloat(savedVolume);
+      this.music.volume = this.musicVolume; // Set the volume of your music player
+    }
   }
   ngOnDestroy() {
     // Unsubscribe from observables and clear intervals here
@@ -219,5 +224,6 @@ export class WordStackingComponent implements OnInit {
   setMusicVolume(volume: number) {
     this.musicVolume = volume;
     this.music.volume = this.musicVolume; // Set the volume of your music player
+    localStorage.setItem('musicVolume', this.musicVolume.toString());
   }
 }
