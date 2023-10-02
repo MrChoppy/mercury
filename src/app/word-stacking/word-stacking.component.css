@@ -17,9 +17,9 @@
     align-self: flex-end;
 }
 
-.word {
+.current-word {
     background-color: #000000;
-    color: white;
+    color: #ffffff;
     font-size: 24px;
     padding: 10px 20px;
     margin: 5px;
@@ -27,6 +27,32 @@
     animation: wordAppear 0.5s ease-in-out;
     user-select: none;
 }
+
+.word {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    animation: wordAppear 0.5s ease-in-out;
+    user-select: none;
+}
+
+@keyframes wordAppear {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .input-container {
     display: flex;
@@ -62,16 +88,22 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    position: absolute;
+
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+
+
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
 }
 
 .play-button {
+
     font-size: 24px;
     padding: 15px 30px;
     background-color: #3498db;
@@ -118,20 +150,6 @@ input {
     z-index: 2;
 }
 
-@keyframes wordAppear {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
 .volume-container {
     display: flex;
     justify-content: center;
@@ -171,10 +189,22 @@ input {
         flex-direction: column-reverse;
         align-items: center;
         margin-bottom: 20px;
-        height: 650px;
+        height: 550px;
         width: 300px;
         z-index: 2;
         background-color: rgba(255, 255, 255, 0.141);
         box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+
+
+    .word {
+        background-color: #000000;
+        color: white;
+        font-size: 24px;
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 5px;
+        animation: wordAppear 0.5s ease-in-out;
+        user-select: none;
     }
 }

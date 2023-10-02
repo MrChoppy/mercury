@@ -112,6 +112,7 @@ export class WordStackingComponent implements OnInit {
     this.wordLength = 4;
     this.score = 0;
     this.isGameOver = false;
+    this.userInput = '';
 
     if (this.wordGenerationInterval) {
       clearInterval(this.wordGenerationInterval);
@@ -169,7 +170,7 @@ export class WordStackingComponent implements OnInit {
     if (!this.isGameOver) {
       if (this.stackedWords.length > 0) {
         const bottomWord = this.stackedWords[0];
-        if (this.userInput === bottomWord.word) {
+        if (this.userInput.toLowerCase() === bottomWord.word) {
           this.playSound('assets/sfx/word.mp3');
           bottomWord.state = 'disappear';
           this.stackedWords.shift();
@@ -182,7 +183,6 @@ export class WordStackingComponent implements OnInit {
 
   gameOver() {
     this.isGameOver = true;
-
     this.isGameStarted = false;
     if (this.score > this.highScore) {
       // Save the new high score to localStorage

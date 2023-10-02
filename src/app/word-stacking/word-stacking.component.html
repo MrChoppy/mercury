@@ -10,7 +10,14 @@
 </div>
 <div class="word-stack-container">
   <div class="word-stack">
-    <div *ngFor="let word of stackedWords" class="word">
+    <div
+      *ngFor="let word of stackedWords"
+      class="word"
+      [ngClass]="{
+        'current-word': word === stackedWords[0],
+        word: word !== stackedWords[0]
+      }"
+    >
       {{ word.word }}
     </div>
   </div>
@@ -28,7 +35,7 @@
     type="range"
     min="0"
     max="1"
-    step="0.1"
+    step="0.01"
     [(ngModel)]="musicVolume"
     (input)="setMusicVolume(musicVolume)"
   />
