@@ -96,6 +96,15 @@ export class WordStackingComponent implements OnInit {
       this.highScore = parseInt(savedScore, 10);
     }
   }
+  ngOnDestroy() {
+    // Unsubscribe from observables and clear intervals here
+    if (this.wordGenerationInterval) {
+      clearInterval(this.wordGenerationInterval);
+    }
+    if (this.wordLengthInterval) {
+      clearInterval(this.wordLengthInterval);
+    }
+  }
 
   startGame() {
     this.isGameStarted = true;
