@@ -1,0 +1,180 @@
+/* word-game.component.css */
+.word-stack {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 670px;
+    width: 500px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.141);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.word-stack-container {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.word {
+    background-color: #000000;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    animation: wordAppear 0.5s ease-in-out;
+    user-select: none;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    z-index: 2;
+}
+
+
+.game-over {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.play-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.play-button {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #2980b9;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.score {
+    font-size: 36px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.highscore-container {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.high-score {
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+@keyframes wordAppear {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.volume-container {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+.volume {
+
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    padding: 0;
+    z-index: 2;
+}
+
+.volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .word-stack {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 20px;
+        height: 650px;
+        width: 300px;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.141);
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+}
