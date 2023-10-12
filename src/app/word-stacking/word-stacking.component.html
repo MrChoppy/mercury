@@ -30,7 +30,10 @@
   />
 </div>
 <div class="volume-container">
+  <label for="music-volume" class="volume-label">Music Volume:</label>
   <input
+    id="music-volume"
+    aria-label="Music"
     class="volume"
     type="range"
     min="0"
@@ -38,6 +41,20 @@
     step="0.01"
     [(ngModel)]="musicVolume"
     (input)="setMusicVolume(musicVolume)"
+  />
+</div>
+<div class="volume-container">
+  <label for="effects-volume" class="volume-label">Sound Effects Volume:</label>
+  <input
+    id="effects-volume"
+    aria-label="Sound Effects"
+    class="volume"
+    type="range"
+    min="0"
+    max="1"
+    step="0.01"
+    [(ngModel)]="effectsVolume"
+    (input)="setEffectsVolume(effectsVolume)"
   />
 </div>
 

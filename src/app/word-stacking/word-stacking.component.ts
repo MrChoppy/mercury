@@ -69,6 +69,9 @@ export class WordStackingComponent implements OnInit {
 
   musicVolume: number = 0.5;
   music = new Audio();
+  effectsVolume: number = 0.5;
+  effects = new Audio();
+
   songs: string[] = [
     'assets/songs/doping-highway.mp3',
     'assets/songs/hit-rewind.mp3',
@@ -95,10 +98,15 @@ export class WordStackingComponent implements OnInit {
     if (savedScore) {
       this.highScore = parseInt(savedScore, 10);
     }
-    const savedVolume = localStorage.getItem('musicVolume');
-    if (savedVolume) {
-      this.musicVolume = parseFloat(savedVolume);
+    const savedMusicVolume = localStorage.getItem('musicVolume');
+    const savedEffectsVolume = localStorage.getItem('effectsVolume');
+    if (savedMusicVolume) {
+      this.musicVolume = parseFloat(savedMusicVolume);
       this.music.volume = this.musicVolume; // Set the volume of your music player
+    }
+    if (savedEffectsVolume) {
+      this.effectsVolume = parseFloat(savedEffectsVolume);
+      this.effects.volume = this.effectsVolume; // Set the volume of your music player
     }
   }
   ngOnDestroy() {
@@ -197,10 +205,9 @@ export class WordStackingComponent implements OnInit {
   }
 
   playSound(sound: string) {
-    const audio = new Audio();
-    audio.src = sound;
-    audio.load();
-    audio.play();
+    this.effects.src = sound;
+    this.effects.load();
+    this.effects.play();
   }
 
   playRandomSong() {
@@ -225,5 +232,10 @@ export class WordStackingComponent implements OnInit {
     this.musicVolume = volume;
     this.music.volume = this.musicVolume; // Set the volume of your music player
     localStorage.setItem('musicVolume', this.musicVolume.toString());
+  }
+  setEffectsVolume(volume: number) {
+    this.effectsVolume = volume;
+    this.effects.volume = this.effectsVolume; // Set the volume of your music player
+    localStorage.setItem('effectsVolume', this.effectsVolume.toString());
   }
 }

@@ -91,8 +91,6 @@ input {
 
     background: rgba(0, 0, 0, 0.7);
     z-index: 999;
-
-
     position: fixed;
     top: 0;
     left: 0;
@@ -150,7 +148,18 @@ input {
     z-index: 2;
 }
 
+.volume-label {
+    position: absolute;
+    top: -20px;
+    /* Adjust the top distance as needed */
+    font-size: 16px;
+    color: white;
+    z-index: 3;
+    /* Place the labels above the sliders */
+}
+
 .volume-container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-self: flex-end;
