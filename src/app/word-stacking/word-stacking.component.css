@@ -125,9 +125,8 @@ input {
 .score {
     font-size: 36px;
     color: #fff;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
     text-align: center;
     z-index: 2;
 }
@@ -141,7 +140,7 @@ input {
 .high-score {
     font-size: 20px;
     color: #fff;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 5px;
     margin-bottom: 20px;
     text-align: center;
